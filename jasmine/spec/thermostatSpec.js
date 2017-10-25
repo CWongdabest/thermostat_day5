@@ -20,10 +20,16 @@ describe('Thermostat', function() {
       thermostat.down(11);
     }).toThrowError('min temp is 10 degrees');
   });
-  it('powersaving mode has max temp of 25 degrees', function() {
+  it('powersaving mode when has max temp of 25 degrees', function() {
     thermostat.powerSavingModeOn();
     expect(function() {
       thermostat.up(16);
-    }).toThrowError('PSM On: max temp is 25 degrees');
+    }).toThrowError('Max temp is 25 degrees');
+  });
+  it('powersaving mode off has a max temp of 32 degrees', function() {
+    thermostat.powerSavingModeOff();
+    expect(function() {
+      thermostat.up(22);
+    }).toThrowError('Max temp is 32 degrees');
   });
 });

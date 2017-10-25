@@ -7,7 +7,7 @@ Thermostat.prototype.temperature = function() {
 };
 Thermostat.prototype.up = function(number) {
   if (this._temperature + number > this._maxTemp) {
-    throw new Error('PSM On: max temp is 25 degrees');
+    throw new Error('Max temp is ' + this._maxTemp + ' degrees');
   } else {
     this._temperature += number;
   }
@@ -20,5 +20,9 @@ Thermostat.prototype.down = function(number) {
   }
 };
 Thermostat.prototype.powerSavingModeOn = function() {
+  this._maxTemp = 25;
+};
 
+Thermostat.prototype.powerSavingModeOff = function() {
+  this._maxTemp = 32;
 };
