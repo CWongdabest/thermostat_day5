@@ -36,4 +36,22 @@ describe('Thermostat', function() {
     thermostat.reset();
     expect(thermostat._temperature).toEqual(20);
   });
+
+
+  describe('energy tests', function() {
+    it('checks low-usage', function() {
+      thermostat.down(5);
+      expect(thermostat.check()).toEqual('low-usage');
+    });
+    it('checks medium-usage', function() {
+      thermostat.powerSavingModeOn();
+      thermostat.down(2);
+      expect(thermostat.check()).toEqual('medium-usage');
+    });
+    it('checks high-usage', function() {
+      thermostat.powerSavingModeOff();
+      thermostat.up(6);
+      expect(thermostat.check()).toEqual('high-usage');
+    });
+  });
 });

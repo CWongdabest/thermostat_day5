@@ -28,3 +28,20 @@ Thermostat.prototype.powerSavingModeOff = function() {
 Thermostat.prototype.reset = function() {
   this._temperature = 20;
 };
+
+Thermostat.prototype.check = function() {
+  if (this._temperature < 18) {
+    return 'low-usage';
+  } else if (this._temperature < 25) {
+    return 'medium-usage';
+  } else if (this._temperature >= 25 ) {
+    return 'high-usage';
+  }
+};
+
+
+
+
+
+// You can ask about the thermostat's current energy usage:
+// < 18 is low-usage, < 25 is medium-usage, anything else is high-usage.
