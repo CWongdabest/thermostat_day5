@@ -22,7 +22,9 @@ Thermostat.prototype.down = function(number) {
 Thermostat.prototype.powerSavingModeOn = function() {
   this._maxTemp = 25;
 };
-
 Thermostat.prototype.powerSavingModeOff = function() {
   this._maxTemp = 32;
+};
+Thermostat.prototype.reset = function() {
+  this._temperature = 20;
 };

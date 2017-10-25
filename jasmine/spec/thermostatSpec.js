@@ -32,4 +32,8 @@ describe('Thermostat', function() {
       thermostat.up(22);
     }).toThrowError('Max temp is 32 degrees');
   });
+  it('resets the temperature to 20 degrees', function() {
+    thermostat.reset();
+    expect(thermostat._temperature).toEqual(20);
+  });
 });
