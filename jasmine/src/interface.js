@@ -30,11 +30,6 @@ $(document).ready(function() {
   });
 
   function updateTemperature() {
-    $('#temperature').text(thermostat.temperature);
+    $('#temperature').text(thermostat.temperature());
   }
 });
-
-function updateTemperature() {
-  $('#temperature').text(thermostat.temperature);
-  $('#temperature').attr('class', thermostat.check());
-}
