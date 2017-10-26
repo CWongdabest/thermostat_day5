@@ -1,6 +1,7 @@
 $(document).ready(function() {
   var thermostat = new Thermostat();
   updateTemperature();
+
   $('#temperature-up').click(function() {
     thermostat.up(1);
     updateTemperature();
