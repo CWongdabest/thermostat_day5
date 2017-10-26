@@ -41,17 +41,17 @@ describe('Thermostat', function() {
   describe('energy tests', function() {
     it('checks low-usage', function() {
       thermostat.down(5);
-      expect(thermostat.check()).toEqual('low-usage');
+      expect(thermostat.checkUsage()).toEqual('low-usage');
     });
     it('checks medium-usage', function() {
       thermostat.powerSavingModeOn();
       thermostat.down(2);
-      expect(thermostat.check()).toEqual('medium-usage');
+      expect(thermostat.checkUsage()).toEqual('medium-usage');
     });
     it('checks high-usage', function() {
       thermostat.powerSavingModeOff();
       thermostat.up(6);
-      expect(thermostat.check()).toEqual('high-usage');
+      expect(thermostat.checkUsage()).toEqual('high-usage');
     });
   });
 });

@@ -36,7 +36,7 @@ Thermostat.prototype.reset = function() {
 };
 
 
-Thermostat.prototype.check = function() {
+Thermostat.prototype.checkUsage = function() {
   if (this._temperature < 18) {
     return 'low-usage';
   } else if (this._temperature < 25) {
