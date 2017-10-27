@@ -9,6 +9,7 @@
     // $(document).ready(function() {
     //   console.log("document loaded");
     // });
+
   </script>
   <script src="./jasmine/src/thermostat.js"></script>
   <script src="./jasmine/src/interface.js"></script>
@@ -16,7 +17,12 @@
 
 <body>
   <section>
-    <h1 id="temperature"></h1>
+    <h1>Current temperature: <span id="current-temperature"></span></h1>
+    <form id="select-city">
+      <input id="current-city" type="text" placeholder="Enter a city"></input>
+      <input type="submit"></input>
+    </form>
+    <h2 id="temperature"></h2>
     <p>
       <button id="temperature-up" class="button">+</button>
       <button id="temperature-down" class="button">-</button>
